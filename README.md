@@ -1,4 +1,4 @@
-# Course-Search-Backend-API-Project
+# Course-Search-Backend-API
 A Backend Web API using FastAPI that searches for courses in  Elasticsearch Database. The Elasticsearch database is populated with data from web scraping using BeautifulSoup4.
 
 ## Overview:
@@ -23,27 +23,31 @@ This python project leverages Amazon EC2 instance for its infrastructure, and Do
     Docker Compose
 
 ## Installation Steps:
-### 1. create EC2 intance using Ubuntu image and config the system.
 
-### 2. run ubuntu_sys_init.sh to update package manager, and install the Pre-Requisites
+### 1. Create EC2 intance using Ubuntu image and config the system.
+
+### 2. Clone this repository:
+      Use git clone https://github.com/khojashaheen/Course-Search-Backend-API/ to clone this repository on your local, and move the files to EC2 instance
+
+### 3. Run ubuntu_sys_init.sh to update package manager, and install the Pre-Requisites
     chmod +x ubuntu_sys_init.sh
     sudo ./ubuntu_sys_init.sh
     
-### 3. Build images for docker-compose:
+### 4. Build images for docker-compose:
     docker-compose build --no-cache
   
-### 4. Start docker containers, which will run Elasticsearch on port 9200, Kibana on port 5601 and FastAPI on port 8000:
+### 5. Start docker containers, which will run Elasticsearch on port 9200, Kibana on port 5601 and FastAPI on port 8000:
     docker-compose up
     
-### 5. Verify docker processes running:
+### 6. Verify docker processes running:
     docker ps
 
-### 6. Start web scraping and store in database:
+### 7. Start web scraping and store in database:
     rm data/output.csv
     python3 scripts/fetch_course.py
     python3 scripts/es_insert_items.py
 
-### 7. Validate the course List using Kibana
+### 8. Validate the course List using Kibana
     http://<EC2-IP>:5601/app/kibana#/dev_tools/
     GET courses/_search?size=10
 <img width="468" alt="Picture1" src="https://github.com/khojashaheen/Course-Search-Backend-API-Project/assets/132402838/f4ba6305-9447-4f82-8641-e0042da5c6d2">
