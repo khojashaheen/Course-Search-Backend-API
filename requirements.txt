@@ -1,0 +1,4 @@
+beautifulsoup4
+requests
+elasticsearch==7
+urllib3==2.1.0
