@@ -46,9 +46,12 @@ This python project leverages Amazon EC2 instance for its infrastructure, and Do
 ### 7. Validate the course List using Kibana
     http://<EC2-IP>:5601/app/kibana#/dev_tools/
     GET courses/_search?size=10
+<img width="468" alt="Picture1" src="https://github.com/khojashaheen/Course-Search-Backend-API-Project/assets/132402838/f4ba6305-9447-4f82-8641-e0042da5c6d2">
 
+    
 ### 8. Validate the search endpoint using FastAPI
     http://<EC2-IP>:8000/search/courses?query=<any keyword>
+<img width="468" alt="Picture2" src="https://github.com/khojashaheen/Course-Search-Backend-API-Project/assets/132402838/6f3da6c3-d3ff-4e7c-9ed8-0ede9f8ca5dc">
 
 
 
